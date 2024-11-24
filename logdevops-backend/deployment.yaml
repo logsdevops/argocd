@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: logdev-backend
-  namespace: registration
+  namespace: authentication
   labels:
    app: logdev-backend
 spec:
