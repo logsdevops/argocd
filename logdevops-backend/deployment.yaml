@@ -4,17 +4,18 @@ metadata:
   name: logdevops-login-backend
   namespace: authentication
   labels:
-   app: logdevops-login-backend
+    app: logdevops-login-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: logdevops-login-backend
       env: qa
-    template:
+  template:
     metadata:
       labels:
         app: logdevops-login-backend
+        env: qa
     spec:
       containers:
       - name: logdevops-login-backend
@@ -25,13 +26,12 @@ spec:
         command: ["/bin/sh", "-c"]
         args: ["java -jar /home/logdevops/demo-1.0.0-SNAPSHOT.jar --spring.config.location=/config/application.properties"]
         volumeMounts:
-          - name: config-volume
-            mountPath: /config/application.properties
-            subPath: application.properties
+        - name: config-volume
+          mountPath: /config/application.properties
+          subPath: application.properties
         ports:
         - containerPort: 9020
       volumes:
-        - name: config-volume
-          configMap:
-            name: logdevops-login-backend
-      restartPolicy: Always
+      - name: config-volume
+        configMap:
+          name: logdevops-login-backend
