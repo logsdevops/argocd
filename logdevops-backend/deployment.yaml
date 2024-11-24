@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: logdev-backend
+  name: logdevops-login-backend
   namespace: authentication
   labels:
-   app: logdev-backend
+   app: logdevops-login-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: logdev-backend
+      app: logdevops-login-backend
       env: qa
     template:
     metadata:
       labels:
-        app: logdev-backend
+        app: logdevops-login-backend
     spec:
       containers:
-      - name: logdev-backend
+      - name: logdevops-login-backend
         image: logsdevops/logdevops-pr:1.0.0-SNAPSHOT
         imagePullPolicy: Always
         stdin: true
@@ -33,5 +33,5 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: logdev-backend
+            name: logdevops-login-backend
       restartPolicy: Always
