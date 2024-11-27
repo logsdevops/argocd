@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logdevops-config
+  namespace: authentication 
+data:
+  email_ID: logdsevops@gmail.com
