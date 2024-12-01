@@ -4,7 +4,7 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
-# - configmap.yaml
+- configmap.yaml
 - deployment.yaml
 - service.yaml
 
