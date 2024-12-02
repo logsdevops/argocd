@@ -17,6 +17,7 @@ spec:
         app: logdevops-login-backend
         env: qa
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: logdevops-login-backend
         image: logsdevops/logdevops-pr:1.0.0-SNAPSHOT
