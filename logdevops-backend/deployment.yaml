@@ -30,6 +30,13 @@ spec:
         - name: config-volume
           mountPath: /config/application.properties
           subPath: application.properties
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: "1Gi"
+          requests:
+            cpu: "1000m"
+            memory: "1Gi"
         envFrom:
         - configMapRef:
             name: logdevops-config
