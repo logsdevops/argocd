@@ -24,7 +24,7 @@ spec:
         imagePullPolicy: Always
         stdin: true
         tty: true
-        command: ["/bin/sh", "-c"]
+        command: ["-c", "/bin/sh"]
         args: ["java -jar /home/logdevops/demo-1.0.0-SNAPSHOT.jar --spring.config.location=/config/application.properties"]
         volumeMounts:
         - name: config-volume
