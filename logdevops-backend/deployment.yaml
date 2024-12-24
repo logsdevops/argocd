@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: logdevops-login-backend
   namespace: authentication
+  annotations:
+    author: Harish
+    buildVersion: "1.0.0-SNAPSHOT"
   labels:
     app: logdevops-login-backend
 spec:
