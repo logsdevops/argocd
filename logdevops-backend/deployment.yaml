@@ -35,10 +35,10 @@ spec:
           subPath: application.properties
         resources:
           limits:
-            cpu: "100millis"
+            cpu: "500m"
             memory: "1Gi"
           requests:
-            cpu: "1000m"
+            cpu: "500m"
             memory: "1Gi"
         envFrom:
         - configMapRef:
